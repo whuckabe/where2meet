@@ -1,0 +1,32 @@
+<ion-view view-title="Events">
+  <ion-nav-buttons side="secondary">
+      <div class="buttons">
+        <button class="button button-icon icon ion-trash-a"
+          ng-click="toggleDelete()"></button>
+      </div>
+    </ion-nav-buttons>
+  <ion-content>
+    <ion-list show-delete="shouldShowDelete">
+      <ion-item ng-repeat="event in events | filter:{owner: filtText}" href="#/app/event/{{event.id}}"
+       href="#/app/menu/{{event.id}}" on-swipe-left="deleteEvent(event.id)">
+        <h2>{{event.title}}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <span style="font-size:70%">{{event.date | date:'MMM. dd, yyyy'}}&nbsp;&nbsp;&nbsp;{{event.time | date:'shortTime'}}</span></h2>
+        <p>{{eventish.description}}</p>
+        <ion-delete-button class="ion-trash-a"
+          ng-click="deleteEvent(event.id)">
+        </ion-delete-button>
+      </ion-item>
+    </ion-list>
+  </ion-content>
+  <div class="tabs-striped tabs-color-royal">
+    <ul class="tabs">
+        <li ng-class="{active:isSelected(1)}" class="tab-item">
+            <a  ng-click="select(1)">All Events</a></li>
+        <li ng-class="{active:isSelected(2)}" class="tab-item">
+            <a ng-click="select(2)">My Events</a></li>
+        <li ng-class="{active:isSelected(3)}" class="tab-item">
+            <a ng-click="select(3)">Other Events</a></li>
+    </ul>
+  </div>
+</ion-view>
+

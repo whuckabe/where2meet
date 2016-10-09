@@ -1,0 +1,56 @@
+<ion-view view-title="Create Event">
+<ion-modal-view>
+  <ion-header-bar>
+    <h1 class="title">Create Event</h1>
+    <div class="buttons">
+      <button class="button button-light" ng-click="closeCreateEvent()">Close</button>
+    </div>
+  </ion-header-bar>
+  <ion-content>
+    <form id="createform" name="createform" ng-submit="doCreateEvent()">
+      <div class="list">
+    <label class="item item-input">
+      <span class="input-label">Title</span>
+      <input type="text" ng-model="event.title">
+    </label>
+    <label class="item item-input">
+      <span class="input-label">Date</span>
+      <input type="date" ng-model="event.date">
+    </label>
+    <label class="item item-input">
+      <span class="input-label">Time</span>
+      <input type="time" ng-model="event.time"
+        name="reservetime" min="11:00:00" max="21:00:00">
+    </label>
+    <label class="item item-input">
+      <span class="input-label">Name</span>
+      <input type="text" ng-model="event.name">
+    </label>
+    <label class="item item-input">
+      <span class="input-label">Address</span>
+      <input type="text" ng-model="event.address">
+    </label>
+    <label class="item item-input">
+      <span class="input-label">City</span>
+      <input type="text" ng-model="event.city">
+    </label>
+    <label class="item item-input">
+      <span class="input-label">State</span>
+      <input type="text" ng-model="event.state">
+    </label>
+    <label class="item item-input">
+      <span class="input-label">Zip</span>
+      <input type="text" ng-model="event.zip">
+    </label>
+    <label class="item item-input">
+      <span class="input-label">Phone</span>
+      <input type="tel" ng-model="event.phone">
+    </label>
+        <label class="item">
+          <button class="button button-block button-positive" type="submit">Create Event</button>
+        </label>
+      </div>
+    </form>
+  </ion-content>
+</ion-modal-view>
+</ion-view>

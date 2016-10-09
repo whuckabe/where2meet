@@ -1,0 +1,47 @@
+<ion-view view-title="Event">
+  <ion-content>
+      <div class="card">
+        <h2>{{event.title}}</h2>
+        {{event.date | date:'MMM. dd, yyyy'}}<br/>
+        {{event.time | date: "shortTime"}}<br/><br/>
+        {{event.name}}<br/>
+        {{event.address}}<br/>
+        {{event.city}}, {{event.state}} {{event.zip}}<br/>
+        {{event.phone}}</p>
+      </div>
+      <div class="row">
+            <div class="col col-offset-5">
+                   <h3>RSVP</h3>
+                   <li class="item item-toggle" ng-hide="hideRSVP">
+                    Attend the Event
+                    <label class="toggle toggle-positive">
+                    <input type="checkbox" ng-model="event.rsvp">
+                        <div class="track">
+                            <div class="handle">
+                            </div>
+                        </div>
+                    </label>
+                    </li>
+                    <ul class="list">
+                        <li ng-repeat="attendee in event.attendees">
+                             <h4>{{attendee.rsvp}} - {{attendee.name}}</h4>
+                        </li>
+                    </ul>
+            </div>
+      </div>
+      <button class="button button-positive" ng-click="comment({{event.id}})" style="margin-left: 10px;">Add Comment</button>
+      <div class="row">
+            <div class="col col-offset-10">
+                   <h3>Comments</h3>
+                    <ul class="list">
+                        <li ng-repeat="comment in event.comments">
+                          <blockquote>
+                             <h4>{{comment.name}}</h4>
+                             <p>{{comment.comment}}</p>
+                          </blockquote>
+                        </li>
+                    </ul>
+            </div>
+      </div>
+  </ion-content>
+</ion-view>
