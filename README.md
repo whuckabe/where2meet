@@ -14,3 +14,10 @@ The Where 2 Meet app allows a person to easily schedule a meeting with friends a
 <p>
 These are the inital features planned for the app to allow scheduling events with family and friends.
 </p>
+<h2>What is contained in the folders</h2>
+<ul>
+<li>json-server - This is a server used when testing the Where 2 Meet app localy. It serves up a JSON file that takes the place of the MongoDB database.</li>
+<li>mongodb/data - This is the files to run the MongoDB data used with the rest-server.</li>
+<li>rest-server - This is an Express server set up to deliver the APIs needed for the Where 2 Meet app.</li>
+<li>where2meetapp - This is an Ionic mobile app. Currently configured to only run in a browser. It is not configured to run on any mobile devices.</li>
+</ul>
