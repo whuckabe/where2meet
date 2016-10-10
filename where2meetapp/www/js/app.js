@@ -37,7 +37,7 @@ angular.module('where2meet', ['ionic', 'where2meet.controllers','where2meet.serv
     views: {
       'mainContent': {
         templateUrl: 'templates/home.html',
-        controller: 'IndexController'
+        controller: ''
       }
     }
   })
@@ -54,7 +54,8 @@ angular.module('where2meet', ['ionic', 'where2meet.controllers','where2meet.serv
       url: '/createEvent',
       views: {
         'mainContent': {
-          templateUrl: 'templates/createEvent.html'
+          templateUrl: 'templates/createEvent.html',
+          controller: ''
         }
       }
     })
